@@ -765,6 +765,11 @@ terminal .terminal-output > div {
   color: white;
 }
 
+.terminal-output div div {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
 .prompt span, .cursor-line span span, .command div span{
   color: #009ae3 !important;
 }

@@ -17,9 +17,9 @@
     <navigations>
         <navigation role="admin">
             <name>OCCWeb</name>
+            <route>occweb.occ.index</route>
             <icon>app.svg</icon>
             <type>link</type>
-            <route>occweb.occ.index</route>
         </navigation>
     </navigations>
 </info>
