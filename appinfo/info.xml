@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>testnextcloudapp</id>
+    <name>Test Nextcloud App</name>
+    <summary>Application Test</summary>
+    <description><![CDATA[Application Test]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="adphi.apps@gmail.com" >Adphi</author>
+    <namespace>TestNextcloudApp</namespace>
+    <category>security</category>
+    <bugs>https://git.adphi.net/Adphi/TestNextcloudApp</bugs>
+    <dependencies>
+        <nextcloud min-version="13" max-version="15"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Test Nextcloud App</name>
+            <route>testnextcloudapp.page.index</route>
+        </navigation>
+    </navigations>
+</info>
