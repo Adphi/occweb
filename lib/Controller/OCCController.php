@@ -11,7 +11,7 @@ use OCP\ILogger;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class OCCController extends Controller implements IRequest
+class OccController extends Controller implements IRequest
 {
   private $logger;
   private $userId;
@@ -39,7 +39,7 @@ class OCCController extends Controller implements IRequest
     );
     $this->application->setAutoExit(false);
 //    $this->output = new OCCOutput();
-    $this->output = new OCCOutput(OutputInterface::VERBOSITY_NORMAL, true);
+    $this->output = new OccOutput(OutputInterface::VERBOSITY_NORMAL, true);
     $this->application->loadCommands(new StringInput(""), $this->output);
   }
 
