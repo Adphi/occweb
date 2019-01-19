@@ -121,7 +121,7 @@ source:
 	--exclude="../$(app_name)/js/node_modules" \
 	--exclude="../$(app_name)/node_modules" \
 	--exclude="../$(app_name)/*.log" \
-	--exclude="../$(app_name)/js/*.log"
+	--exclude="../$(app_name)/js/*.log" \
 
 # Builds the source package for the app store, ignores php and js tests
 .PHONY: appstore
@@ -149,7 +149,7 @@ appstore:
 	--exclude="../$(app_name)/karma.*" \
 	--exclude="../$(app_name)/protractor\.*" \
 	--exclude="../$(app_name)/.*" \
-	--exclude="../$(app_name)/js/.*"
+	--exclude="../$(app_name)/js/.*" \
 
 .PHONY: test
 test: composer
