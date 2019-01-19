@@ -41,5 +41,8 @@
         }
       });
     });
+    $('html').keypress(function(){
+      scrollToBottom()
+    })
   });
 })(OC, window, jQuery);

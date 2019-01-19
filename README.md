@@ -1,8 +1,4 @@
-# OCCWeb terminal
-
-A web terminal for admins to launch Nextcloud's occ commands
-
-
+# Test Nextcloud App
 Place this app in **nextcloud/apps/**
 
 ## Building the app
