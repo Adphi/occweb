@@ -15,9 +15,11 @@
         <nextcloud min-version="13" max-version="15"/>
     </dependencies>
     <navigations>
-        <navigation>
+        <navigation role="admin">
             <name>OCCWeb</name>
-            <route>occweb.page.index</route>
+            <icon>app.svg</icon>
+            <type>link</type>
+            <route>occweb.occ.index</route>
         </navigation>
     </navigations>
 </info>

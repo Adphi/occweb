@@ -23,7 +23,7 @@
           term.echo('\n' + response).resume();
         });
       }, {
-        greetings: '[[;green;]' + new Date().toString().slice(0, 24) + "]\n\nPress Enter for more information on occ commands.\n",
+        greetings: '[[;green;]' + new Date().toString().slice(0, 24) + "]\n\nPress [[;#ff5e99;]Enter] for more information on [[;#009ae3;]occ] commands.\n",
         name: 'occ',
         prompt: 'occ $ ',
         completion: response,
