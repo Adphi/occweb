@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class OCCOutput extends BufferedOutput implements ConsoleOutputInterface
+class OccOutput extends BufferedOutput implements ConsoleOutputInterface
 {
 
   /**

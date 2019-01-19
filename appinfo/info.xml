@@ -10,7 +10,7 @@
     <author mail="adphi.apps@gmail.com" >Adphi</author>
     <namespace>OCCWeb</namespace>
     <category>security</category>
-    <bugs>https://git.adphi.net/Adphi/TestNextcloudApp</bugs>
+    <bugs>https://git.adphi.net/Adphi/OCCWeb</bugs>
     <dependencies>
         <nextcloud min-version="13" max-version="15"/>
     </dependencies>
