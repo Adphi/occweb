@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>testnextcloudapp</id>
-    <name>Test Nextcloud App</name>
-    <summary>Application Test</summary>
-    <description><![CDATA[Application Test]]></description>
+    xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>occweb</id>
+    <name>OCC Web</name>
+    <summary>OCC Command in a web terminal</summary>
+    <description><![CDATA[Run OCC Commands in a web terminal]]></description>
     <version>0.0.1</version>
     <licence>agpl</licence>
     <author mail="adphi.apps@gmail.com" >Adphi</author>
-    <namespace>TestNextcloudApp</namespace>
+    <namespace>OCCWeb</namespace>
     <category>security</category>
     <bugs>https://git.adphi.net/Adphi/TestNextcloudApp</bugs>
     <dependencies>
@@ -16,8 +16,9 @@
     </dependencies>
     <navigations>
         <navigation>
-            <name>Test Nextcloud App</name>
-            <route>testnextcloudapp.page.index</route>
+            <name>OCCWeb</name>
+            <route>occweb.page.index</route>
         </navigation>
     </navigations>
 </info>
+

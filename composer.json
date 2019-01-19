@@ -1,6 +1,6 @@
 {
-    "name": "Test Nextcloud App",
-    "description": "Application Test",
+    "name": "OCC Web",
+    "description": "OCC Web terminal",
     "type": "project",
     "license": "AGPL",
     "authors": [

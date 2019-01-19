@@ -6,7 +6,7 @@
  * Time: 19:08
  */
 
-namespace OCA\TestNextcloudApp\Controller;
+namespace OCA\OCCWeb\Controller;
 
 
 use Symfony\Component\Console\Output\BufferedOutput;

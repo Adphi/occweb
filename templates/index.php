@@ -1,8 +1,8 @@
 <?php
-script('testnextcloudapp', 'index');
-script('testnextcloudapp', 'term');
-script('testnextcloudapp', 'unix_formatting');
-style('testnextcloudapp', 'style');
+script('occweb', 'index');
+script('occweb', 'term');
+script('occweb', 'unix_formatting');
+style('occweb', 'style');
 ?>
 
 <div id="app" class="full-width">

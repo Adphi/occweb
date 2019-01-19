@@ -5,7 +5,7 @@
       var html = $('html');
       html.scrollTop(html.prop('scrollHeight'));
     }
-    var baseUrl = OC.generateUrl('/apps/testnextcloudapp');
+    var baseUrl = OC.generateUrl('/apps/occweb');
     $.get(baseUrl + '/cmd', function(response){
       $('#app-content').terminal(function(command, term) {
         var occCommand = {

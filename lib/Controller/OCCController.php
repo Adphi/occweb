@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\TestNextcloudApp\Controller;
+namespace OCA\OCCWeb\Controller;
 
 use OC\Console\Application;
 use OCP\IRequest;
@@ -56,7 +56,7 @@ class OCCController extends Controller implements IRequest
    */
   public function index()
   {
-    return new TemplateResponse('testnextcloudapp', 'index');  // templates/index.php
+    return new TemplateResponse('occweb', 'index');  // templates/index.php
   }
 
   private function run($input)
