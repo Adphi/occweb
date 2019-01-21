@@ -3,14 +3,16 @@
     xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
     <id>occweb</id>
     <name>OCC Web</name>
-    <summary>OCC Command in a web terminal</summary>
+    <summary>OCC Commands in a web terminal</summary>
     <description><![CDATA[Run OCC Commands in a web terminal]]></description>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <licence>agpl</licence>
     <author mail="adphi.apps@gmail.com" >Adphi</author>
     <namespace>OCCWeb</namespace>
-    <category>security</category>
-    <bugs>https://git.adphi.net/Adphi/OCCWeb</bugs>
+    <category>tools</category>
+    <screenshot>https://git.adphi.net/Adphi/OCCWeb/raw/master/appinfo/screenshot.png</screenshot>
+    <repository>https://git.adphi.net/Adphi/OCCWeb</repository>
+    <bugs>https://git.adphi.net/Adphi/OCCWeb/issues</bugs>
     <dependencies>
         <nextcloud min-version="13" max-version="15"/>
     </dependencies>
