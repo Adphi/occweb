@@ -10,6 +10,7 @@
     <author mail="adphi.apps@gmail.com" >Adphi</author>
     <namespace>OCCWeb</namespace>
     <category>tools</category>
+    <website>>https://git.adphi.net/Adphi/OCCWeb</website>
     <screenshot>https://git.adphi.net/Adphi/OCCWeb/raw/master/appinfo/screenshot.png</screenshot>
     <repository>https://git.adphi.net/Adphi/OCCWeb</repository>
     <bugs>https://git.adphi.net/Adphi/OCCWeb/issues</bugs>
