@@ -29,7 +29,7 @@
  */
 namespace OCA\OCCWeb\Controller;
 
-use OC\MemoryInfo;
+//use OC\MemoryInfo;
 use OC\NeedsUpdateException;
 use OC_App;
 use OCP\AppFramework\QueryException;
@@ -50,8 +50,8 @@ class OCCApplication {
   private $dispatcher;
   /** @var ILogger  */
   private $logger;
-  /** @var MemoryInfo */
-  private $memoryInfo;
+//  /** @var MemoryInfo */
+//  private $memoryInfo;
 
   /**
    * @param IConfig $config
@@ -61,14 +61,14 @@ class OCCApplication {
    */
   public function __construct(IConfig $config,
                               EventDispatcherInterface $dispatcher,
-                              ILogger $logger,
-                              MemoryInfo $memoryInfo) {
+                              ILogger $logger/*,
+                              MemoryInfo $memoryInfo*/) {
     $defaults = \OC::$server->getThemingDefaults();
     $this->config = $config;
     $this->application = new SymfonyApplication($defaults->getName(), \OC_Util::getVersionString());
     $this->dispatcher = $dispatcher;
     $this->logger = $logger;
-    $this->memoryInfo = $memoryInfo;
+//    $this->memoryInfo = $memoryInfo;
   }
 
   /**
@@ -101,12 +101,12 @@ class OCCApplication {
       $output->setVerbosity(OutputInterface::VERBOSITY_QUIET);
     }
 
-    if ($this->memoryInfo->isMemoryLimitSufficient() === false) {
-      $output->getErrorOutput()->writeln(
-        '<comment>The current PHP memory limit ' .
-        'is below the recommended value of 512MB.</comment>'
-      );
-    }
+//    if ($this->memoryInfo->isMemoryLimitSufficient() === false) {
+//      $output->getErrorOutput()->writeln(
+//        '<comment>The current PHP memory limit ' .
+//        'is below the recommended value of 512MB.</comment>'
+//      );
+//    }
 
     try {
       require_once __DIR__ . '/../../../../core/register_command.php';

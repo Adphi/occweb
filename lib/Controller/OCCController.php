@@ -32,8 +32,8 @@ class OccController extends Controller
     $this->application = new OCCApplication(
       \OC::$server->getConfig(),
       \OC::$server->getEventDispatcher(),
-      \OC::$server->getLogger(),
-      \OC::$server->query(\OC\MemoryInfo::class)
+      \OC::$server->getLogger()/*,
+      \OC::$server->query(\OC\MemoryInfo::class)*/
     );
     $this->application->setAutoExit(false);
 //    $this->output = new OCCOutput();
