@@ -1,7 +1,11 @@
 # OCCWeb terminal
 
-A web terminal for admins to launch Nextcloud's occ commands
+### A web terminal for admins to launch Nextcloud's occ commands
 
+![occweb](https://git.adphi.net/Adphi/OCCWeb/raw/master/appinfo/screenshot.png)
+
+
+## 
 
 Place this app in **nextcloud/apps/**
 
