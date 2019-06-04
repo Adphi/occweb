@@ -15,7 +15,7 @@
     <repository>https://git.adphi.net/Adphi/OCCWeb</repository>
     <bugs>https://git.adphi.net/Adphi/OCCWeb/issues</bugs>
     <dependencies>
-        <nextcloud min-version="13" max-version="15"/>
+        <nextcloud min-version="13" max-version="16"/>
     </dependencies>
     <navigations>
         <navigation role="admin">
