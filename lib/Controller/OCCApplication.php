@@ -109,7 +109,7 @@ class OCCApplication {
 //    }
 
     try {
-      require_once __DIR__ . '/../../../../core/register_command.php';
+      require_once \OC::$SERVERROOT . '/core/register_command.php';
       if ($this->config->getSystemValue('installed', false)) {
         if (\OCP\Util::needUpgrade()) {
           throw new NeedsUpdateException();
