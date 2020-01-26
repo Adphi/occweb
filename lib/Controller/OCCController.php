@@ -2,6 +2,10 @@
 
 namespace OCA\OCCWeb\Controller;
 
+use Exception;
+use OC;
+use OC\Console\Application;
+use OC\MemoryInfo;
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
@@ -18,49 +22,42 @@ class OccController extends Controller
   private $application;
   private $output;
 
-  public $server;
-
-  public function __construct(ILogger $logger, $AppName, IRequest $request, $UserId)
+  public function __construct(ILogger $logger, $AppName, IRequest $request, $userId)
   {
     parent::__construct($AppName, $request);
     $this->logger = $logger;
-    $this->userId = $UserId;
+    $this->userId = $userId;
 
-    $this->server = array(
-      'argv' => ["occ"],
-    );
-    $this->application = new OCCApplication(
-      \OC::$server->getConfig(),
-      \OC::$server->getEventDispatcher(),
-      \OC::$server->getLogger()/*,
-      \OC::$server->query(\OC\MemoryInfo::class)*/
+    $this->application = new Application(
+      OC::$server->getConfig(),
+      OC::$server->getEventDispatcher(),
+      new FakeRequest(),
+      OC::$server->getLogger(),
+      OC::$server->query(MemoryInfo::class)
     );
     $this->application->setAutoExit(false);
-//    $this->output = new OCCOutput();
     $this->output = new OccOutput(OutputInterface::VERBOSITY_NORMAL, true);
     $this->application->loadCommands(new StringInput(""), $this->output);
   }
 
   /**
-   * CAUTION: the @Stuff turns off security checks; for this page no admin is
-   *          required and no CSRF check. If you don't know what CSRF is, read
-   *          it up in the docs or you might create a security hole. This is
-   *          basically the only required method to add this exemption, don't
-   *          add it to any other method if you don't exactly know what it does
-   *
    * @NoCSRFRequired
    */
   public function index()
   {
-    return new TemplateResponse('occweb', 'index');  // templates/index.php
+    return new TemplateResponse('occweb', 'index');
   }
 
+  /**
+   * @param $input
+   * @return string
+   */
   private function run($input)
   {
     try {
       $this->application->run($input, $this->output);
       return $this->output->fetch();
-    } catch (\Exception $ex) {
+    } catch (Exception $ex) {
       exceptionHandler($ex);
     } catch (Error $ex) {
       exceptionHandler($ex);
@@ -68,20 +65,15 @@ class OccController extends Controller
   }
 
   /**
-   * @NoAdminRequired
    * @param string $command
    * @return DataResponse
    */
   public function cmd($command)
   {
-
-    $this->logger->info($command);
+    $this->logger->debug($command);
     $input = new StringInput($command);
-    // TODO : Interactive ?
     $response = $this->run($input);
-//    $this->logger->info($response);
-//    $converter = new AnsiToHtmlConverter();
-//    return new DataResponse($converter->convert($response));
+    $this->logger->debug($response);
     return new DataResponse($response);
   }
 
