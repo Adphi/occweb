@@ -1,18 +1,16 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: philippe-adrien
- * Date: 2019-01-18
- * Time: 19:08
- */
 
 namespace OCA\OCCWeb\Controller;
 
 
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
+use Symfony\Component\Console\Output\ConsoleSectionOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * @method ConsoleSectionOutput section()
+ */
 class OccOutput extends BufferedOutput implements ConsoleOutputInterface
 {
 
@@ -30,5 +28,9 @@ class OccOutput extends BufferedOutput implements ConsoleOutputInterface
   public function setErrorOutput(OutputInterface $error)
   {
 
+  }
+
+  public function __call($name, $arguments) {
+    // TODO: Implement @method ConsoleSectionOutput section()
   }
 }
