@@ -30,7 +30,7 @@ class OccOutput extends BufferedOutput implements ConsoleOutputInterface
 
   }
 
-  public function __call($name, $arguments) {
-    // TODO: Implement @method ConsoleSectionOutput section()
-  }
+//  public function __call($name, $arguments) {
+//    // TODO: Implement @method ConsoleSectionOutput section()
+//  }
 }
