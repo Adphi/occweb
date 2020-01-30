@@ -157,3 +157,7 @@ appstore:
 test: composer
 	$(CURDIR)/vendor/phpunit/phpunit/phpunit -c phpunit.xml
 	$(CURDIR)/vendor/phpunit/phpunit/phpunit -c phpunit.integration.xml
+
+.PHONY: sign
+sign:
+	@openssl dgst -sha512 -sign ~/.nextcloud/certificates/occweb.key build/artifacts/appstore/occweb.tar.gz |openssl base64
