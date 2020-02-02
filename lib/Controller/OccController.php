@@ -58,9 +58,8 @@ class OccController extends Controller
       $this->application->run($input, $this->output);
       return $this->output->fetch();
     } catch (Exception $ex) {
-      exceptionHandler($ex);
-    } catch (Error $ex) {
-      exceptionHandler($ex);
+      $this->logger->logException($ex);
+      return "error: " . $ex->getMessage();
     }
   }
 
@@ -87,9 +86,3 @@ class OccController extends Controller
   }
 }
 
-function exceptionHandler($exception)
-{
-  echo "An unhandled exception has been thrown:" . PHP_EOL;
-  echo $exception;
-  exit(1);
-}
