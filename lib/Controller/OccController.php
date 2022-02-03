@@ -13,6 +13,7 @@ use OCP\AppFramework\Controller;
 use OCP\ILogger;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\OutputInterface;
+use Psr\Log\LoggerInterface;
 
 class OccController extends Controller
 {
@@ -32,7 +33,7 @@ class OccController extends Controller
       OC::$server->getConfig(),
       OC::$server->getEventDispatcher(),
       new FakeRequest(),
-      OC::$server->getLogger(),
+      OC::$server->get(LoggerInterface::class),
       OC::$server->query(MemoryInfo::class)
     );
     $this->application->setAutoExit(false);
