@@ -10,10 +10,10 @@
     <author mail="adphi.apps@gmail.com" >Adphi</author>
     <namespace>OCCWeb</namespace>
     <category>tools</category>
-    <website>https://git.adphi.net/adphi/occweb</website>
-    <bugs>https://git.adphi.net/adphi/occweb/issues</bugs>
-    <repository>https://git.adphi.net/adphi/occweb</repository>
-    <screenshot>https://git.adphi.net/adphi/occweb/raw/master/appinfo/screenshot.png</screenshot>
+    <website>https://github.com/adphi/occweb</website>
+    <bugs>https://github.com/adphi/occweb/issues</bugs>
+    <repository>https://github.com/adphi/occweb</repository>
+    <screenshot>https://github.com/adphi/occweb/raw/master/appinfo/screenshot.png</screenshot>
     <dependencies>
         <nextcloud min-version="19" max-version="23"/>
     </dependencies>
