@@ -21,6 +21,7 @@ class OccController extends Controller
   private $userId;
 
   private $application;
+  private $symphonyApplication;
   private $output;
 
   public function __construct(ILogger $logger, $AppName, IRequest $request, $userId)
@@ -38,7 +39,10 @@ class OccController extends Controller
     );
     $this->application->setAutoExit(false);
     $this->output = new OccOutput(OutputInterface::VERBOSITY_NORMAL, true);
-    $this->application->loadCommands(new StringInput(""), $this->output);
+    $this->application->loadCommands(new StringInput(""), $this->output);    
+    $reflectionProperty = new \ReflectionProperty(Application::class, 'application');
+    $reflectionProperty->setAccessible(true);
+    $this->symphonyApplication = $reflectionProperty->getValue($this->application);
   }
 
   /**
@@ -78,11 +82,11 @@ class OccController extends Controller
   }
 
   public function list() {
-    // $defs = $this->application->application->all();
+    $defs = $this->symphonyApplication->all();
     $cmds = array();
-    // foreach ($defs as $d) {
-    //   array_push($cmds, $d->getName());
-    // }
+    foreach ($defs as $d) {
+      array_push($cmds, $d->getName());
+    }
     return new DataResponse($cmds);
   }
 }
