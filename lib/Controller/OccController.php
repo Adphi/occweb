@@ -78,11 +78,11 @@ class OccController extends Controller
   }
 
   public function list() {
-    $defs = $this->application->application->all();
+    // $defs = $this->application->application->all();
     $cmds = array();
-    foreach ($defs as $d) {
-      array_push($cmds, $d->getName());
-    }
+    // foreach ($defs as $d) {
+    //   array_push($cmds, $d->getName());
+    // }
     return new DataResponse($cmds);
   }
 }
