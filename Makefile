@@ -162,10 +162,15 @@ test: composer
 sign:
 	@openssl dgst -sha512 -sign ~/.nextcloud/certificates/occweb.key build/artifacts/appstore/occweb.tar.gz |openssl base64
 
+VERSION := $(shell xpath -q -e "//info/version/text()" appinfo/info.xml)
+
+.PHONY: show-version
+show-version:
+	@echo $(VERSION)
+
 .PHONY: version
 version:
 	@echo "Creating version v$(VERSION)"
-	@sed -i "s/<version>[0-9a-z.]\{1,\}<\/version>/<version>$(VERSION)<\/version>/g" appinfo/info.xml
 	@git tag v$(VERSION)
 	@git push origin v$(VERSION)
 	@make dist
