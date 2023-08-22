@@ -13,7 +13,7 @@
     <website>https://github.com/adphi/occweb</website>
     <bugs>https://github.com/adphi/occweb/issues</bugs>
     <repository>https://github.com/adphi/occweb</repository>
-    <screenshot>https://github.com/adphi/occweb/raw/master/appinfo/screenshot.png</screenshot>
+    <screenshot>https://github.com/adphi/occweb/raw/main/appinfo/screenshot.png</screenshot>
     <dependencies>
         <nextcloud min-version="19" max-version="27"/>
     </dependencies>

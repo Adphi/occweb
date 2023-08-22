@@ -2,7 +2,7 @@
 
 ### A web terminal for admins to launch Nextcloud's occ commands
 
-![occweb](https://git.adphi.net/Adphi/OCCWeb/raw/master/appinfo/screenshot.png)
+![occweb](https://github.com/Adphi/OCCWeb/raw/main/appinfo/screenshot.png)
 
 
 ## ⚠️ Deprecated ⚠️
@@ -21,4 +21,4 @@ So if your instance is pretty big, commands like `occ files:scan` will time out 
 - Do not use `occ maintenance:mode --on`, obvious...
 
 ## TODOs:
-See [open issues](https://git.adphi.net/Adphi/OCCWeb/issues)
+See [open issues](https://github.com/Adphi/occweb/issues)
