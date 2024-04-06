@@ -32,7 +32,7 @@ class OccController extends Controller
 
     $this->application = new Application(
       OC::$server->getConfig(),
-      OC::$server->getEventDispatcher(),
+      OC::$server->get(\OCP\EventDispatcher\IEventDispatcher::class),
       new FakeRequest(),
       OC::$server->get(LoggerInterface::class),
       OC::$server->query(MemoryInfo::class)
