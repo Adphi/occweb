@@ -35,7 +35,8 @@ class OccController extends Controller
       OC::$server->get(\OCP\EventDispatcher\IEventDispatcher::class),
       new FakeRequest(),
       OC::$server->get(LoggerInterface::class),
-      OC::$server->query(MemoryInfo::class)
+      OC::$server->query(MemoryInfo::class),
+      OC::$server->get(\OCP\App\IAppManager::class) // Obtain the IAppManager
     );
     $this->application->setAutoExit(false);
     $this->output = new OccOutput(OutputInterface::VERBOSITY_NORMAL, true);
