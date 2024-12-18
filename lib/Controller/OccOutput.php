@@ -19,7 +19,7 @@ class OccOutput extends BufferedOutput implements ConsoleOutputInterface
    *
    * @return OutputInterface
    */
-  public function getErrorOutput()
+  public function getErrorOutput(): OutputInterface
   {
     // TODO: Implement getErrorOutput() method.
     return $this;
