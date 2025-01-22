@@ -5,7 +5,7 @@
     <name>OCC Web</name>
     <summary>OCC Commands in a web terminal</summary>
     <description><![CDATA[Run OCC Commands in a web terminal]]></description>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <licence>agpl</licence>
     <author mail="adphi.apps@gmail.com" >Adphi</author>
     <namespace>OCCWeb</namespace>
@@ -15,7 +15,7 @@
     <repository>https://github.com/adphi/occweb</repository>
     <screenshot>https://github.com/adphi/occweb/raw/main/appinfo/screenshot.png</screenshot>
     <dependencies>
-        <nextcloud min-version="28" max-version="29"/>
+        <nextcloud min-version="30" max-version="30"/>
     </dependencies>
     <navigations>
         <navigation role="admin">
