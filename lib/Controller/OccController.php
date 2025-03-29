@@ -30,12 +30,14 @@ class OccController extends Controller
     $this->userId = $userId;
 
     $this->application = new Application(
+      OC::$server->get(\OCP\ServerVersion::class),
       OC::$server->getConfig(),
       OC::$server->get(\OCP\EventDispatcher\IEventDispatcher::class),
       new FakeRequest(),
       $this->logger,
       OC::$server->query(MemoryInfo::class),
-      OC::$server->get(\OCP\App\IAppManager::class) // Obtain the IAppManager
+      OC::$server->get(\OCP\App\IAppManager::class), // Obtain the IAppManager
+      OC::$server->get(\OCP\Defaults::class)
     );
     $this->application->setAutoExit(false);
     $this->output = new OccOutput(OutputInterface::VERBOSITY_NORMAL, true);
