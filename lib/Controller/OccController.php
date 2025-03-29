@@ -10,7 +10,6 @@ use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
-use OCP\ILogger;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Psr\Log\LoggerInterface;
@@ -24,17 +23,17 @@ class OccController extends Controller
   private $symphonyApplication;
   private $output;
 
-  public function __construct(ILogger $logger, $AppName, IRequest $request, $userId)
+  public function __construct($AppName, IRequest $request, $userId)
   {
     parent::__construct($AppName, $request);
-    $this->logger = $logger;
+    $this->logger = OC::$server->get(LoggerInterface::class);
     $this->userId = $userId;
 
     $this->application = new Application(
       OC::$server->getConfig(),
       OC::$server->get(\OCP\EventDispatcher\IEventDispatcher::class),
       new FakeRequest(),
-      OC::$server->get(LoggerInterface::class),
+      $this->logger,
       OC::$server->query(MemoryInfo::class),
       OC::$server->get(\OCP\App\IAppManager::class) // Obtain the IAppManager
     );
@@ -64,7 +63,7 @@ class OccController extends Controller
       $this->application->run($input, $this->output);
       return $this->output->fetch();
     } catch (Exception $ex) {
-      $this->logger->logException($ex);
+      $this->logger->error($ex->getMessage(), ['exception' => $ex]);
       return "error: " . $ex->getMessage();
     }
   }
